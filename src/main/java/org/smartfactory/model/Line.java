@@ -9,6 +9,8 @@ public class Line implements ExecutableUnit {
     private List<Machine> machineList;
 
     public void execute() {
-        machineList.forEach(Machine::execute);
+        if(machineList != null){
+            machineList.forEach(Machine::execute);
+        }
     }
 }

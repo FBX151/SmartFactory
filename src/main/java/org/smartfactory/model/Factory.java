@@ -7,8 +7,9 @@ import lombok.Builder;
 @Builder
 public class Factory implements ExecutableUnit {
     private List<Line> productionLines;
-
     public void execute() {
-        productionLines.forEach(Line::execute);
+        if (productionLines != null) {
+            productionLines.forEach(Line::execute);
+        }
     }
 }

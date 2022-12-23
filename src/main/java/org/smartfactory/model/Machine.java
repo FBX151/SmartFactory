@@ -11,9 +11,11 @@ public class Machine implements ExecutableUnit {
     List<Station> stationList;
 
     public void execute() {
-        stationList.stream()
-                .map(Station::getStationType)
-                .map(StationType::getOperationToThePart)
-                .forEach(System.out::println);
+        if (stationList != null){
+            stationList.stream()
+                    .map(Station::getStationType)
+                    .map(StationType::getOperationToThePart)
+                    .forEach(System.out::println);
+        }
     }
 }
